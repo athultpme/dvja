@@ -38,9 +38,11 @@ jobs:
           name: grype-scan-report
           path: grype-report.json
 
-      - name: Run SAST scan with Synk
+      - name: Install Snyk
         run:
           npm install -g snyk
+
+      - name: Run SAST scan with Snyk
         env:
           SNYK_TOKEN: ${{secrets.SNYK_TOKEN}}
         run:
