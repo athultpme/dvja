@@ -40,7 +40,7 @@ jobs:
 
       - name: Run SAST scan with Synk
         env:
-          SNYK_TOKEN: ${{secrets.8a132784-7948-4428-a31a-ccdc4c39e177}}
+          SNYK_TOKEN: ${{secrets.SNYK_TOKEN}}
         run:
          snyk test > sast-report.json
 
