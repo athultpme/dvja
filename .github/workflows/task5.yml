@@ -30,7 +30,7 @@ jobs:
 
       - name: Run SCA scan with Grype
         run:
-          grype sbom:./sbom.json
+          grype sbom:./dvja-sbom.json
     
 
     
