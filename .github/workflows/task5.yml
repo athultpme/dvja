@@ -1,4 +1,4 @@
-name: SBOM generation with Syft
+name: SBOM generation with Grype
 on: 
   workflow_dispatch
 jobs:
