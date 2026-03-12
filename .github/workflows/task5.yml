@@ -37,6 +37,16 @@ jobs:
     steps:
       - run: npm install -g snyk
       - run: snyk test || true
+      - name:
+        
         env:
           SNYK_TOKEN: ${{secrets.SNYK_TOKEN}}
-  
+        run:
+          snyk auth $SNYK_TOKEN
+          snyk test --json > sast-report.json || true
+
+      - name: Upload SAST report
+        uses: actions/upload-artifact@v4
+        with:
+          name: sast-report
+          path: sast-report.json
